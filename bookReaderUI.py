@@ -10,7 +10,7 @@ if "url_exist" not in st.session_state:
 if "use_url" not in st.session_state:
     st.session_state.use_url = False
 
-st.title("QA Chatbot")
+st.title("RAGy Chatbot")
 
 # # After getting URL from user it process URL and will show progress here. NOTE: will be manage from document loading class
 def show_progress_bar():
