@@ -98,7 +98,7 @@ class BookerReaderModule():
                         # print("embeddings->", embeddings)
                         self.store_data_and_embeddings(embeddings, text_doc_list)
                         print("count ->",self.database.get_colletion_items_count())
-                        print(int("49ers34-31"))
+                        # print(int("49ers34-31"))
                         
 
 
