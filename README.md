@@ -1,4 +1,4 @@
-# LangChainCookBook
+# LangChainCookBook Series
 Work related to Langchain and OpenAI
 
 
