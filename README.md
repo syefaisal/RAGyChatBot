@@ -14,7 +14,7 @@ Work related to Langchain and OpenAI
     - python3 -m streamlit run bookReaderUI.py
 
 # User Guide:
-- Review the UI sequence.jpg
+- Review the UI_sequence.jpg
 - This is a RAG application that is implemented as a ChatBot.
 - This RAG application uses streamlit as User Interface for Chat Bot interface.
 - User copy pastes an article that is written after 2022. Since That is the last year until ChatGPT is trained with internet datasets.
