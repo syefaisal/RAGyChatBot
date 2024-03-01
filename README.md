@@ -1,32 +1,17 @@
 # LangChainCookBook
 Work related to Langchain and OpenAI
 
-# please create an environment file with the following content
+# please create an environment file (name = ".env") with the content from sample.env
 
 
-OPENAI_API_KEY_LOCAL=<YOUR Open AI Key.>
+# Installation Instructions:
+pip install -r requirements.txt
 
-LLM_MODEL = gpt-3.5-turbo-0301
-
-QDRANT_COLLECTION_NAME = fg2ds
-QDRANT_URL = http://localhost
-QDRANT_PORT = 6333
-DOC_TYPE = pdf
-
-
-QDRANT__LOG_LEVEL=INFO
-QDRANT__SERVICE__HTTP_PORT=6333
-QDRANT__SERVICE__ENABLE_TLS=1
-QDRANT__TLS__CERT=./tls/cert.pem
-QDRANT__TLS__CERT_TTL=0000
-
-
-
-# command to start the project:
+# Command to start the project:
 
 streamlit run bookReaderUI.py
 
-User Guide:
+# User Guide:
 - This is a RAG application that is implemented as a ChatBot.
 - This RAG application uses streamlit as User Interface for Chat Bot interface.
 - User copy pastes an article that is written after 2022. Since That is the last year until ChatGPT is trained with internet datasets.
@@ -42,5 +27,16 @@ User Guide:
 - After last step for every query that does not have a URL. the RAG will use web URL data as a context.
 - So for testing purpose i pick up latest news article URL and paste in the ChatBot. 
 - Then ask questions accordingly. 
+
+ToDos:
+- Create Map reduce Chain		
+- Create Refine Chain		
+- Apply Advanced RAG methods like following:
+    - Multi Query - Given a single user query, use an LLM to synthetically generate multiple other queries. Use each one of the new queries to retrieve documents, take the union of those documents for the final context of your prompt
+    - Contextual Compression - Fluff remover. Normal retrieval but with an extra step of pulling out relevant information from each returned document. This makes each relevant document smaller for your final prompt (which increases information density)
+    - Parent Document Retriever - Split and embed small chunks (for maximum information density), then return the parent documents (or larger chunks) those small chunks come from
+    - Ensemble Retriever - Combine multiple retrievers together
+    - Self-Query - When the retriever infers filters from a users query and applies those filters to the underlying data.
+
 
         
