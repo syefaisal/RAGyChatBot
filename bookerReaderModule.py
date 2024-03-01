@@ -56,20 +56,21 @@ class BookerReaderModule():
 
         def process_user_query(self, query):
 
-                qVDBObj = QdrantVectorDB(
-                    config.DB_CONNECTION_URL, config.DB_CONNECTION_PORT, config.COLLECTION_NAME)
-                qdClient = qVDBObj.initializeClient()
-                qdbConnection = qVDBObj.connectDB(qdClient)
-                docStore = qVDBObj.querySimilaritySearchbyVector(
-                    qdbConnection, query)
-                print("Here is the response from QDrant:\n", docStore)
-
-                # return docStore
+                # qVDBObj = QdrantVectorDB(
+                #     config.DB_CONNECTION_URL, config.DB_CONNECTION_PORT, config.COLLECTION_NAME)
+                # qdClient = qVDBObj.initializeClient()
+                # qdbConnection = qVDBObj.connectDB(qdClient)
+                # docStore = qVDBObj.querySimilaritySearchbyVector(
+                #     qdbConnection, query)
+                self.database.get_or_create_colletion(self.embeddings, "49ers34-31")
+                print("count ->",self.database.get_colletion_items_count())
+                docStore = self.database.query_data(query)
+                print("Here is the response from DB:\n", docStore)
 
                 # invoke Q&A chain
                 mychain = QnAChain(type="stuff")
                 response = mychain.invokeChain(docStore, query)
-                print(response)
+                # print(response)
                 print(response.get('output_text'))
                 return response.get('output_text')
 
@@ -106,11 +107,12 @@ class BookerReaderModule():
                 """
                 This functions checks the count of items in the collection 
 
-                return: if 0 then Falst otherwise True
+                return: if 0 then False otherwise True
                 """
                 result = False if self.database.get_colletion_items_count() == 0 else True
                 print("IF DB EXIST OR NOT: ", result)
-                return result        
+                # return result        
+                return False
 
         def create_embeddings(self, text_doc_list: List[str]):
                 """

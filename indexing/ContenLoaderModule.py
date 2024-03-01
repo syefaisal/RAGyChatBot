@@ -21,11 +21,11 @@ class ContentLoader:
     def loadContentfromWebURL(url):
         #Load HTML
         # loader = AsyncChromiumLoader(["https://lilianweng.github.io/posts/2023-06-23-agent/"])
-        urls = ["https://www.ninersnation.com/2024/1/31/24057432/final-observations-from-san-francisco-49ers-34-31-win-over-detroit-lions-brock-purdy-kyle-shanahan"]
+        # urls = ["https://www.ninersnation.com/2024/1/31/24057432/final-observations-from-san-francisco-49ers-34-31-win-over-detroit-lions-brock-purdy-kyle-shanahan"]
         # urls = ["https://www.wsj.com/"]
         # urls = ["https://en.wikipedia.org/wiki/Brown-headed_cowbird"]
         
-        loader = AsyncHtmlLoader(urls)
+        loader = AsyncHtmlLoader(url)
         docs = loader.load()
         print("loadContentfromWebURL docs ->",docs)
 

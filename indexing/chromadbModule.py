@@ -23,6 +23,8 @@ class ChromadbClient(object):
         self.collection_name = collection_name
         
         self.langchain_chroma = Chroma(client=self.chroma_client,collection_name=self.collection_name,embedding_function=embedding.embedding_model)
+        print(self.langchain_chroma)
+        
         return self.chroma_client.get_or_create_collection(name=self.collection_name)
     
     def get_colletion_items_count(self):
@@ -46,8 +48,12 @@ class ChromadbClient(object):
         ids = [f"id{i}" for i in range(self.get_colletion_items_count(),self.get_colletion_items_count()+len(documents))]
         metaData = [{"source": "my_source"} for i in range(0,len(documents))]
         
-        self.chroma_client.get_collection(self.collection_name).add(ids=ids,
+
+        self.chroma_client.delete_collection(name=self.collection_name)
+        self.chroma_client.get_or_create_collection(self.collection_name).add(ids=ids,
                                 embeddings=embeddings,documents=documents,metadatas=metaData)
+        # self.chroma_client.get_collection(self.collection_name).add(ids=ids,
+        #                         embeddings=embeddings,documents=documents,metadatas=metaData)
         
     def query_data(self, query:str):
         """Retrieve data from Database

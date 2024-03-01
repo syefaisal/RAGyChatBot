@@ -76,6 +76,8 @@ if prompt := st.chat_input("Message QA Chatbot..."):
     # print("this is the line", st.session_state.use_url,st.session_state.url_exist)
     else:
         assistant_response = "Process Query"
+        assistant_response = bookReader.process_user_query(query)
+        print(assistant_response)
         if st.session_state.url_exist:
             st.session_state.url_exist = None
 
