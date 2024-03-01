@@ -1,17 +1,17 @@
 # LangChainCookBook
 Work related to Langchain and OpenAI
 
-# please create an environment file (name = ".env") with the content from sample.env
+
 
 
 # Installation Instructions:
-pip install -r requirements.txt
-
+    - pip install -r requirements.txt
+    - Please create an environment file (name = ".env") with the content from sample.env
 # Command to start the project:
 
-streamlit run bookReaderUI.py
-or
-python3 -m streamlit run bookReaderUI.py
+    - streamlit run bookReaderUI.py
+    or
+    - python3 -m streamlit run bookReaderUI.py
 
 # User Guide:
 - Review the UI sequence.jpg
