@@ -30,6 +30,8 @@ Work related to Langchain and OpenAI
 - After last step for every query that does not have a URL. the RAG will use web URL data as a context.
 - So for testing purpose i pick up latest news article URL and paste in the ChatBot. 
 - Then ask questions accordingly. 
+- Here is a screenshot that captures the user interaction.
+- ![Alt text](UI_sequence.jpg "Title")
 
 # ToDos:
 - Create Map reduce Chain		
@@ -41,5 +43,4 @@ Work related to Langchain and OpenAI
     - Ensemble Retriever - Combine multiple retrievers together
     - Self-Query - When the retriever infers filters from a users query and applies those filters to the underlying data.
  
-- ![Alt text](UI_sequence.jpg "Title")
 
