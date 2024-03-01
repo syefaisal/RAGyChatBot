@@ -10,8 +10,11 @@ pip install -r requirements.txt
 # Command to start the project:
 
 streamlit run bookReaderUI.py
+or
+python3 -m streamlit run bookReaderUI.py
 
 # User Guide:
+- Review the UI sequence.jpg
 - This is a RAG application that is implemented as a ChatBot.
 - This RAG application uses streamlit as User Interface for Chat Bot interface.
 - User copy pastes an article that is written after 2022. Since That is the last year until ChatGPT is trained with internet datasets.
@@ -37,6 +40,3 @@ ToDos:
     - Parent Document Retriever - Split and embed small chunks (for maximum information density), then return the parent documents (or larger chunks) those small chunks come from
     - Ensemble Retriever - Combine multiple retrievers together
     - Self-Query - When the retriever infers filters from a users query and applies those filters to the underlying data.
-
-
-        
