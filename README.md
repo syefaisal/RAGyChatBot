@@ -31,7 +31,7 @@ Work related to Langchain and OpenAI
 - So for testing purpose i pick up latest news article URL and paste in the ChatBot. 
 - Then ask questions accordingly. 
 
-ToDos:
+# ToDos:
 - Create Map reduce Chain		
 - Create Refine Chain		
 - Apply Advanced RAG methods like following:
