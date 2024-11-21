@@ -7,6 +7,9 @@ Work related to Langchain and OpenAI
 # Installation Instructions:
     - pip install -r requirements.txt
     - Please create an environment file (name = ".env") with the content from sample.env
+    - Setup ChromaDB using follopwing commands:
+        docker pull chromadb/chroma
+        docker run -p 8000:8000 chromadb/chroma
 # Command to start the project:
 
     - streamlit run bookReaderUI.py
